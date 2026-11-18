@@ -2649,7 +2649,7 @@ def check_box(box):
        * Removed obsolete box types ``tri_box`` and ``tri_vecs_bad``.
     """
     if box is None:
-        raise ValueError("Box is None")
+        raise ValueError("Box is None [AIDEAL fix:box_cannot_be_none] Ensure the input 'box' is a valid array-like object representing unit cell dimensions, not None.")
     from .mdamath import triclinic_vectors  # avoid circular import
 
     box = np.asarray(box, dtype=np.float32, order="C")
